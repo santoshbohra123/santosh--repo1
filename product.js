@@ -33,7 +33,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
     document.getElementById("total-amount").textContent = totalAmount;
     document.getElementById("order-form").style.display = "none";
 
-    let item= document.getElementById("item-name").inputValue;
+    let item= document.getElementById("bill-item-name");
 
     if (paymentMethod === "cod") {
       document.getElementById("bill-section").style.display = "block";
