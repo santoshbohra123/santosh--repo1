@@ -33,7 +33,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
     document.getElementById("total-amount").textContent = totalAmount;
     document.getElementById("order-form").style.display = "none";
 
-    let item= document.getElementById("item-name");
+    let item= document.getElementById("item-name").inputValue;
 
     if (paymentMethod === "cod") {
       document.getElementById("bill-section").style.display = "block";
@@ -179,7 +179,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
           if (transactionId.length === 12) {
             clearInterval(timerInterval);
             setTimeout(() => {
-              const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\nRoom No: ${room}\nItem:${item}\nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: UPI\nTransaction ID: ${transactionId}`;
+              const whatsappMessage = `Hi, my order details:\nName: ${name}\nMobile: ${mobile}\n Hostel Name: ${hostel}\nRoom No: ${room}\nItem:${item}\nQuantity: ${quantity}\nTotal Amount: ₹${totalAmount}\nPayment: UPI\nTransaction ID: ${transactionId}`;
               window.open(`https://wa.me/7668607168?text=${encodeURIComponent(whatsappMessage)}`, "_blank");
               alert(" ✅ Payment successful! Redirecting...");
               window.location.href = "/";
