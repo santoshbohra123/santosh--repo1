@@ -50,7 +50,15 @@
     margin-bottom: 20px;
   }
   
-  .item-container, .testimonial-container {
+  .item-container{
+ display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+  }
+  
+  .testimonial-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;

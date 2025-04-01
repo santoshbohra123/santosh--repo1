@@ -131,7 +131,8 @@ document.getElementById("order-form").addEventListener("submit", function (event
 
         sendDetailsBtn.addEventListener("mouseleave", function () {
           sendDetailsBtn.style.background = "linear-gradient(45deg,#ff6b6b, #ffcc00)";
-          sendDetailsBtn.style.transform = "scale(0.79)";
+          sendDetailsBtn.style.transform = "scale(0.95)";
+
         });
 
         // Disabled State Style
@@ -161,9 +162,7 @@ document.getElementById("order-form").addEventListener("submit", function (event
           const transactionId = document.getElementById("transaction-id").value.trim();
           if (transactionId.length >= 12) {
             enableSendDetailsButton();
-            // sendDetailsBtn.disabled = false; // Enable button
-            // sendDetailsBtn.style.cursor = "pointer";
-            // sendDetailsBtn.style.opacity = "1.25";
+            
           } else {
             sendDetailsBtn.disabled = true; // Keep it disabled
             sendDetailsBtn.style.opacity = "0.6";

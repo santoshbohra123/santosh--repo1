@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NightServes - Order Food at Any Hour!</title>
   <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
   <header>
@@ -18,9 +19,11 @@
       <div class="item-card">
         <img src="orio.jpg" alt="Biscuits">
         <h3>Oreo Biscuits</h3>
-        <h4></h4>
-        <button class="order-btn" onclick="location.href='oreo.html'">Order Now</button>
+        <button class="order-btn" id="order-oreo-btn"onclick="location.href='oreo.html'">Order Now</button>
+    
+       </div> 
       </div>
+
       <div class="item-card">
         <img src="nutcracker.jpg" alt="Nut Cracker ">
         <h3>Nut Cracker</h3>
@@ -96,6 +99,30 @@
   </footer>
   
   <script>
+
+     function createNotAvailable(){
+
+let notavailable= document.createElement("p");
+document.querySelector(".item-container").appendChild(notavailable);
+notavailable.id = "notavailable";
+notavailable.textContent = "⚠️ Currently Not Available ⚠️"
+notavailable.style.color=" #FF0000";
+notavailable.style.fontWeight = "bold";
+
+notavailable.style.animation = "popup 0.5s ease-out";
+notavailable.style.marginTop = "20px";
+
+
+let oreoBtn = document.getElementById("order-oreo-btn");
+oreoBtn.style.cursor = "not-allowed";
+
+
+
+}
+
+createNotAvailable();
+
+
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault();
       
@@ -108,6 +135,7 @@
       const whatsappURL = `https://wa.me/${selectedNumber}?text=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
       window.open(whatsappURL, '_blank');
     });
+
   </script>
 </body>
 </html>
